@@ -1,0 +1,146 @@
+﻿Cách Viết chương trình chuẩn trong Laravel :
+A-Phần đặt tên chung có liên quan tới :
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('users', function ()    {
+        // Matches The "/admin/users" URL
+    });
+});
+
+Route
+1-Đối với Route
+-Tên của route phỉa viết chữ thường ,và giống như view
+2-Controller
+Viết chữ hoa của chữ cái đầu Tên của Group+TenChucnang;
+3-View
+Đặt Tên : Folder+Tên chức năng =Group+tenchucnang;
+4-Request
+Đặt Tên : Post,Edit...+Group
+Bước 1 Form
+
+đặt  name phù hợp
+ví dụ :
+username:
+password:
+gmail:
+
+Ngoài ra đặt dòng lên sau để hiện ra lỗi khi submit
+@if (count($errors) > 0)
+<ul>
+@foreach ($errors->all() as $error)
+<li>{{ $error }}</li>
+@endforeach
+</ul>
+@endif
+
+Bướ 2 Phần Request :
+2.1-Tạo file : php artisan make:request ProductRequest
+2.2- Xử lý trong file Request vừa tạo ProductRequest
+public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+        'username'=>'required|unique:tenbang,tentruong',
+        'password'=>'required|min:8'
+        'gmail'=>'required|gmail|unique:tenbang,tentruong',
+        // tham khảo cái rules tại: https://laravel.com/docs/5.2/validation#available-validation-rules
+
+        
+        ];
+    }
+    public function messages()
+    {
+        return [
+        'username.required'=>'Bạn chưa nhập username',
+        'username.unique'=>'Bạn chưa nhập username',
+        
+
+       
+        ];
+    }
+2.3 -Xử lý trong Controller
+public function TenFunction(TenReequest $request)
+{
+ $username =$request->username;
+$password =$request->password;
+
+}
+
+// Xong Phần Request
+
+
+
+5-Migrations
+// Mục đích là tạo bảng csdl
+
+6-Seeding 
+// Mục đích tạo record csdl
+7-Validator
+// Validator cũng tương tự như Request nhưng Requet thì làm file riêng còn Validator là luôn trong Funtion của Controller
+
+//$v = Validator::make(data, rules, messages, customAttributes);
+
+$v = Validator::make($request->all(), 
+[
+'hoten' => 'required|unique|max:255',
+'sodienthoai' => 'required',
+'email' => 'required'
+],
+ ['hoten.required' => 'Vui Lòng Nhập Họ Tên']);
+if ($v->fails()) 
+{
+return redirect()->back()->withErrors($v->errors());
+}
+else
+{
+// làm theo ý của mình
+}
+8-Model
+// Viết các function có liên quan đến csdl
+
+Commad line create Model and migration( lớp tạo bảng dữ liệu ) :
+If you would like to generate a database migration when you generate the model, you may use the --migration or -m option:
+
+php artisan make:model User --migration
+
+php artisan make:model User -m
+9-Authentication
+-$table ->timestamps(); nếu bỏ thì trong directory cũng bỏ luôn
+protected $table ="name_table";
+protected $fillable =['tên trường1','tên trường 2'];
+public $timestamps = false;
+
+NHỮNG BƯỚC AUTHENCATION
+ bước 1: Migration
+ bước 2: Model
+ bước 3 :Controller
+ bước 4:View
+
+
+10 RESTful Controller
+mục địch viết api (webservice) chuẩn cho các thiết bị mobile
+
+bước 1 tạo Controller bằng commad line
+php artisan make:controller HocsinhController
+bước 2: trong route tạo 
+Route::resource('hocsinh','HocsinhController');
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+﻿<?php
+
+namespace app\controllers;
+use app\models\Category1;
+use app\models\Category2;
+use app\models\Questions;
+use app\models\Answers;
+
+class QaController extends \yii\web\Controller
+{
+    public function actionIndex()
+    {
+        return $this->render('index');
+    }
+
+        public function actionAll()
+    {
+        $bien =Category1::find()->all();
+
+        foreach ($bien as $value) {
+
+        	echo"Cấp 1" .$value['title']."</br>";
+
+        	$category2 =$value->category2s;
+
+        	foreach ($category2 as $value) 
+        	{
+        		echo"---- Cấp 2". $value['title']."</br>";
+
+        		$question =$value->questions;
+
+        		foreach ($question as $value) {
+        			echo"---------Cấp 3". $value['title']."</br>";
+
+        			$answers =$value->answers;
+        			foreach ($answers as $value) 
+        			{
+        				echo"--------------Cấp 4". $value['content']."</br>";
+
+      
+
+        				
+        			}
+
+        			
+        		}
+
+        	}
+        	
+        }
+
+    
+     
+    }
+
+
+
+
+
+
+}
