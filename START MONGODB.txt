@@ -1,0 +1,21 @@
+﻿bước 1:
+cd C:\Program Files\MongoDB\Server\3.2\bin
+bước 2:
+mongod.exe --config D:\MongoStore\config.txt
+bước 3: 
+tạo một màn hình khác
+cd C:\Program Files\MongoDB\Server\3.2\bin
+bước 4
+gõ lệnh mongo
+// kết thúc
+Muốn máy mình là service
+Bước 1: Mở CMD bằng admin
+cd C:\Program Files\MongoDB\Server\3.2\bin
+Bước 2 :
+mongod.exe --config D:\MongoStore\config.txt --install
+bước 3 :
+net start MongoDB
+Thông báo (The MongoDB service was started successfully.) là đã thành công
+Cách 2:
+vào :Window Service
+vào service MongoDB start
