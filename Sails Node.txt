@@ -1,0 +1,9 @@
+email : {
+type : 'string',
+email :true,
+required :true
+
+
+}
+
+vào config/blueprints

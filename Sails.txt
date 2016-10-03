@@ -1,7 +1,0 @@
-﻿Bước 1:
-npm -g install sails  // cài sails
-Bước 2:
-sails new testProject  // Tạo project sailsjs
-Bước 3:
-cd testProject
-sails lift

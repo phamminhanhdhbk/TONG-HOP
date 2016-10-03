@@ -1,0 +1,87 @@
+﻿tham khảo tại 
+https://www.codementor.io/nodejs/tutorial/how-to-setup-sailsjs-tutorial-beginners
+Bước 1 :
+//commad line create api
+
+
+sails generate api newsAPI
+
+
+//sẽ tạo cho chúng ta 2 file
+api/controllers/NewsAPIController.js and 
+api/models/NewsAPI
+
+Bước 2 :
+vào api/models/NewsAPI
+
+
+module.exports = {
+
+  attributes: {
+
+
+ 		name : {
+ 			type : 'string'     
+ 		},
+ 		location : {
+ 			type : 'string'
+ 		},
+ 		phone :{
+ 			type :'integer'
+ 		},
+ 		sex :{
+ 			type :"string"
+ 		},
+ 		country :{
+ 			type :"string"
+ 		}
+
+
+  }
+};
+
+
+Bước 3:
+sails lift
+
+Bước 4
+Vào POSTMAN
+method (POST)
+vào localhost:1337/newsAPI
+
+{
+"name" : "Trần Công Tuấn",
+"location"  :"Nghĩa Thắng-Tư Nghĩa-Quảng Ngãi",
+"phone" : "12345",
+"sex" :"Nam",
+"country" :"Việt Nam"
+}
+
+Bước 5:
+method (get)
+vào localhost:1337/newsAPI
+// list database
+
+Ngoài ra còn có update ,delete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

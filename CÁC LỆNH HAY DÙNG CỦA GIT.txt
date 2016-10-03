@@ -1,4 +1,4 @@
-git add . // đẩy lên tất cả
+﻿git add . // đẩy lên tất cả
 git add * // đẩy lên tất cả
 git commit -m "" // tiêu đề muốn pull lênh
 git tag Name_tag muốn đẩy lên
@@ -11,6 +11,8 @@ git branch -d name_branch // xóa nhánh
 git branch // kiểm tra xem mình đang ở nhánh nào
 git branch -v // xem commit mới nhất trên nhánh
 git merge tennhanh  // mới chuyển về nhánh master rồi mới merge
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOUR EMAIL ADDRESS"
 
 
 đây là nhánh của minhanh

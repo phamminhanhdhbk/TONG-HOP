@@ -1,0 +1,57 @@
+﻿1-Routes
+In config/routes.js:
+Khai báo routes
+routes.js:
+
+'/account': {
+    controller: 'UserController',
+    action: 'checkLogin',
+    view: 'home/account'
+  }
+
+
+Truyền biến trong 
+
+  '/bootstrap': {
+    view: 'bootstrap',
+
+    locals: {
+      name: 'Hồng Ánh',
+      location: 'Quảng Ngãi',
+      phone: '01212051382',
+      sex: 'Nam',
+      country: 'Việt Nam',
+    }
+  },
+
+
+
+
+
+
+
+2-Controller
+
+
+Is it possible to specify routes and accepted verbs above controller actions, without having to have to specify it in config/routes.js ?
+
+module.exports = {
+    // GET /users
+    getAllUsers: function (req, res) {
+        User.find().exec(function (err, obj) {
+            res.send(obj);
+        });
+    },
+    // GET /users/:id
+    getUserByID: function (req, res) {
+        User.find({id:req.params.id}).exec(function (err, obj) {
+            res.send(obj);
+        });
+    },
+    // POST /users
+    createUser: function (req, res) {
+        User.create(req.body).exec(function (err, obj) {
+            res.send(201, obj);
+        });
+    }
+};
