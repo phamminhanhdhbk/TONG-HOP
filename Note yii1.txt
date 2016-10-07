@@ -1,0 +1,224 @@
+
+<?php 
+
+$criteria = new CDbCriteria();
+// $criteria->select = 'id, title,parent,slug';
+$criteria->condition = 'parent=:parent AND status=:status';
+$criteria->params = array(':parent'=>0, ':status'=>1);
+$criteria->order = 't.sort ASC, t.id desc';
+
+$model = Category::model()->findAll($criteria);
+foreach ($model as $key => $model):
+
+	?>
+
+<h1><?php echo $model->sort;  ?></h1>
+
+
+<?php endforeach ?>
+
+
+Sort Trong YII1;
+-Model;
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+			'questions' => array(self::MANY_MANY, 'Question', 'question_country(id_country, id_question)',
+				'order'=>'questions.sort ASC ,questions.id DESC',
+
+				),
+			);
+	}
+
+Controller;
+
+
+	public function actionTestcountry()
+	{
+		$country = Countries::model()->with('questions')->find('abbr="aus"');
+		echo $country->name."<br/>";
+		$dem =0;
+		foreach ($country->questions as $key => $questions) 
+		{
+			echo "--Questions ".++$dem." sort____=" .$questions->sort."_____id= ".$questions->id."<br/> <br/>";
+
+
+			$demqs = 1;
+			foreach ($questions->answers as $key => $answers) 
+			{
+
+				echo "------Answers".$demqs ++ ."<br/>";
+
+
+			}
+
+
+			
+		}
+
+
+
+	}
+	public function actionTestqa()
+	{
+		$criteria = new CDbCriteria();
+		$criteria->condition = 'parent=:parent AND status=:status';
+		$criteria->params = array(':parent'=>0, ':status'=>1);
+		$criteria->order = 'sort ASC ,id DESC';
+		$cateparent = Category::model()->findAll($criteria);
+		$dem0 =1;
+		foreach ($cateparent as $key => $cateparent) 
+		{
+			echo "Parent__ ".$dem0 ++."  ____sort =".$cateparent->sort."__id =".$cateparent->id."<br/>";
+
+			$criteria = new CDbCriteria();
+			$criteria->condition = 'parent=:parent AND status=:status';
+			$criteria->params = array(':parent'=>$cateparent->id, ':status'=>1);
+			$criteria->order = 'sort ASC ,id DESC';
+			$cateson = Category::model()->findAll($criteria);
+			$dem =1;
+			foreach ($cateson as $key => $cateson) 
+			{
+				echo "____Son . ".$dem ++."  ____sort =".$cateson->sort."__id =".$cateson->id."<br/>";
+			}
+
+
+
+			
+		}
+
+		
+
+	}
+	public function actionTestcontentcate()
+	{
+		$id =22;
+		$criteria = new CDbCriteria();
+		$criteria->condition = 'id=:id AND status=:status';
+		$criteria->params = array(':id'=>$id, ':status'=>1);
+		$criteria->order = 'sort ASC ,id DESC';
+		$cateparent = Category::model()->find($criteria);
+
+
+
+
+		if (!empty($cateparent))
+		{
+
+			echo "Parent".$cateparent->title."id = ".$cateparent->id."<br/>";
+
+			$id =$cateparent->id;
+			$criteria = new CDbCriteria();
+			$criteria->condition = 'parent=:parent AND status=:status';
+			$criteria->params = array(':parent'=>$id, ':status'=>1);
+			$criteria->order = 'sort ASC ,id DESC';
+			$cateson = Category::model()->findAll($criteria);
+			$demson =1;
+
+			foreach ($cateson as $key => $cateson)
+			{
+
+				echo "Son_".$demson ++." ".$cateson->title."id = ".$cateson->id."parent = ".$cateson->parent."<br/>";
+				$dem =0;
+				foreach ($cateson->questions as $key => $questions) 
+				{
+					echo "--Questions ".++$dem." sort____=" .$questions->sort."_____id= ".$questions->id."<br/> <br/>";
+
+
+					$demqs = 1;
+					foreach ($questions->answers as $key => $answers) 
+					{
+
+						echo "------Answers".$demqs ++ .$answers->content."<br/>";
+
+
+					}
+
+
+
+				}
+
+				
+			}
+			
+		}
+
+		else
+		{
+			echo "Không có";
+		}
+
+
+		// echo "Parent__ ".$dem0 ++."  ____sort =".$cateparent->sort."__id =".$cateparent->id."<br/>";
+
+		// $criteria = new CDbCriteria();
+		// $criteria->condition = 'parent=:parent AND status=:status';
+		// $criteria->params = array(':parent'=>$cateparent->id, ':status'=>1);
+		// $criteria->order = 'sort ASC ,id DESC';
+		// $cateson = Category::model()->findAll($criteria);
+		// $dem =1;
+		// foreach ($cateson as $key => $cateson) 
+		// {
+		// 	echo "____Son . ".$dem ++."  ____sort =".$cateson->sort."__id =".$cateson->id."<br/>";
+		// }
+
+
+
+
+		
+
+	}
+	public function actionTestcontentson()
+	{
+
+		$id =20;
+		$criteria = new CDbCriteria();
+		$criteria->condition = 'parent=:parent AND status=:status';
+		$criteria->params = array(':parent'=>$id, ':status'=>1);
+		$criteria->order = 'sort ASC ,id DESC';
+		$cateson = Category::model()->findAll($criteria);
+		$demson =1;
+
+		if (!empty($cateson))
+		{
+
+			foreach ($cateson as $key => $cateson)
+			{
+
+				echo "Son_".$demson ++." ".$cateson->title."id = ".$cateson->id."parent = ".$cateson->parent."<br/>";
+				$dem =0;
+				foreach ($cateson->questions as $key => $questions) 
+				{
+					echo "--Questions ".++$dem." sort____=" .$questions->sort."_____id= ".$questions->id."<br/> <br/>";
+
+
+					$demqs = 1;
+					foreach ($questions->answers as $key => $answers) 
+					{
+
+						echo "------Answers".$demqs ++ .$answers->content."<br/>";
+
+
+					}
+
+
+
+				}
+
+
+			}
+
+
+		}
+
+
+
+		
+
+
+	}
+
+
+
