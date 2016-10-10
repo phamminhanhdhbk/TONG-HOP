@@ -1,0 +1,169 @@
+﻿Các lệnh GIT cơ bản
+1. git init
+
+Công dụng: Tạo một repository mới
+
+Để tạo 1 repository mới, bạn hãy mở cửa sổ lệnh và gõ dòng lệnh sau
+
+Mã:
+git init
+2. git clone
+
+Công dụng: Sao chép (clone) một repository
+
+Để clone 1 repository có sẵn ở trên máy cục bộ, bạn hãy sử dụng dòng lệnh sau:
+
+Mã:
+git clone /đường-dẫn-đến/repository/
+Nếu repository đó ở máy chủ khác thì bạn hãy gõ dòng lệnh sau:
+
+Mã:
+git clone tênusername@địachỉmáychủ:/đường-dẫn-đến/repository
+3. git branch
+
+Công dụng: Kiểm tra nhánh hiện tại
+
+Cú pháp
+
+Mã:
+git branch
+Công dụng: Tạo nhánh mới
+
+Cú pháp
+
+Mã:
+git branch <Tên nhánh>
+Công dụng: Xóa một nhánh
+
+Cú pháp
+
+Mã:
+git branch -d <Tên nhánh>
+4. git checkout
+
+Công dụng: Chuyển nhánh
+
+Các nhánh (branches) được dùng để phát triển tính năng tách riêng ra từ những nhánh khác. Nhánh master là nhánh "mặc định" khi bạn tạo một repository. Sử dụng các nhánh khác tri đang trong giai đoạn phát triển và merge trở lại nhánh master một khi đã hoàn tất. 
+
+Click image for larger version. 
+
+Name:	branches.jpg 
+Views:	1 
+Size:	12.4 KB 
+ID:	161
+
+Cú pháp
+
+Mã:
+git checkout <Tên nhánh>
+Tạo một nhánh mới và đặt tên là "feature_x" và chuyển qua nhánh đó (từ master) bằng cách
+
+Mã:
+git checkout -b feature_x
+Trở lại nhánh master
+
+Mã:
+git checkout master
+5. git add
+
+Công dụng: Cập nhật tình trạng các file( thêm, xóa, sửa) trong project được quản lý bởi GIT
+
+Cú pháp
+
+Mã:
+#Cập nhật tất cả
+git add .
+#Cập nhật tất cả các file có dạng
+git add *.<tên đuôi>
+#Cập nhật file theo tên
+git add <tên file 1> [<tên file 2> ... <Tên file n>]
+6. git commit
+
+Công dụng: Xác nhận và lưu những thay đổi của project
+
+Cú pháp
+
+Mã:
+git commit -am "<Ghi chú>"
+7. git push
+
+Công dụng: Cập nhật những thay đổi của project và gửi lên server
+
+Cú pháp
+
+Mã:
+git push origin <Tên nhánh>
+Nếu bạn chưa clone một repository hiện có và muốn kết nối repository của bạn đến máy chủ remote, bạn phải thêm nó với
+
+Mã:
+git remote add origin <máy-chủ>
+Bây giờ bạn đã có thể đẩy các thay đổi của mình vào máy chủ đã chọn
+
+8. git fetch
+
+Công dụng: Lấy source mới nhất trên server về đè lên source hiện tại trên máy local
+
+Cú pháp
+
+Mã:
+git fetch <Tên nhánh>
+9. git pull
+
+Công dụng: Lấy source mới nhất trên server về và tiến hành trộn
+
+Cú pháp
+
+Mã:
+git pull <Tên nhánh>
+10. git tag
+
+Công dụng: Gắn nhãn (tagging)
+
+Người ta khuyên nên tạo nhãn (tags) khi phát hành phần mềm. Đây là khái niệm được biết đến, đã từng có trên SVN. Bạn tạo tag mới tên là 1.0.0 bằng cách
+
+Mã:
+git tag 1.0.0 1b2e1d63ff
+Chuỗi 1b2e1d63ff là 10 ký tự đầu tiên của mã commit (commit id) mà bạn muốn tham chiếu đến bằng nhãn của bạn. Bạn có thể lấy mã commit với lệnh
+
+Mã:
+git log
+Bạn cũng có thể sử dụng ít ký tự hơn từ mã commit, nó chỉ cần phải là duy nhất.
+
+11. Các gợi ý hữu ích
+
+GIT GUI tích hợp sẵn
+
+Mã:
+gitk
+Sử dụng kết quả git với nhiều màu
+
+Mã:
+git config color.ui true
+hiện log trên chỉ một dùng mỗi commit
+
+Mã:
+git config format.pretty oneline
+Sử dụng thêm tập tin tương tác
+
+Mã:
+git add -i
+12. Các liên kết và tài nguyên
+
+Trình sử dụng có đồ họa
+
+GitX (L) (OSX, open source)
+Tower (OSX)
+Source Tree (OSX, free)
+GitHub for Mac (OSX, free)
+GitBox (OSX, App Store)
+
+Hướng dẫn
+
+Git Community Book
+Pro Git
+Think like a git
+GitHub Help
+A Visual Git Guide
+Learn Git Branching
+More Git and GitHub Secrets
+Understanding Git Conceptually
