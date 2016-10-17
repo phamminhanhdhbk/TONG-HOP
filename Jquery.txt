@@ -1,0 +1,8 @@
+﻿1 .get value in thẻ td trong table
+
+$("button.edit").click(function()
+{
+     var name = $(this).parent().parent().parent().find("td:eq(2)").text();
+
+});
+  
