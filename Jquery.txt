@@ -5,4 +5,97 @@ $("button.edit").click(function()
      var name = $(this).parent().parent().parent().find("td:eq(2)").text();
 
 });
-  
+
+2. Thêm ,Xóa ,Thêm Và Xóa(không thì thêm có thì xóa)
+
+  addClass( class ) 
+removeClass( class )
+toggleClass( class )
+
+ví dụ :
+$("p").addClass("Maudo");
+
+HTML và TEXT
+A -HTMl
+1)  .html() kiểu trả về string gồm các thành phần html
+$("p").click(function() {alert($(this).html())});
+
+2) thiết lập nội dung cho thẻ
+$("div").html("<b>Chào các bạn!<i> Chúc buổi học hôm nay thú vị.</i></b>")
+
+B-TEXT
+1) lấy nội dung trong thẻ p ,a ,h ...
+$("p").click(function() {alert($(this).html())});
+
+2) thiết lập nội dung cho thẻ
+$("div").text("Chào các bạn! Chúc buổi học hôm nay thú vị");
+
+Lưu ý: Để đảm bảo rằng trang web vẫn có định dạng trước khi code JavaScript được thực
+hiện, người ta thường đặt <link rel=”stylesheet”> đằng trước thẻ <script> trong phần <head>
+-----------------------
+Học JQUERY TRÊN YOUTOBE https://www.youtube.com/watch?v=AEMXXWrJmHU&list=PLRhlTlpDUWsyAGY7FDGSndEhOD3F2Ruhm
+
+.jquery là một thu viện trong javascript ...nhanh gọn nhẹ hỗ trợ đa trình duyệt
+code dễ hơn javas..
+có thể mở rộng
+thao tác ajax đơn giản hơn
+cộng đồng và plugin lớn
+$(document) .ready(function(){});
+sự khác nhau giữ $(window).load và $(document).ready
+
+$(document) .ready(function(){}); DOM đã load xong nhưng image thì chưa chăc
+$(window).load đã load hết rồi .có nghĩa là cái này sẽ chạy cuối cùng
+
+-cách viết ngắn ngon của $(document) .ready(function(){});  là $(function(){});
+
+<img id ="name-id" src ="name.jpg"/>
+get width and height của image
+$("#name-id").width();
+$("#name-id").height();
+
+-gán nội dung cho thẻ div
+
+-$("#id-div").html("nội dung 1"+ "Nội dung 2");
+-CDN có nghĩa là lấy thử viện jquery của google ..microsoft ...giúp chung load nhanh hơn hoặc không phải tải lại trang lần nữa
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ kiểm tra nếu chưa có thì load lại
+window.jQuery || document.write("<script src='scripts\/jquery.min.js'><\/script> ");
+
+-set màu chẵn lẻ cho table
+$('table tr:even').css('color','blue'); // dòng tr lẽ (even)
+$('table tr:odd').css('color','yellow'); // dòng tr chẵn (odd)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

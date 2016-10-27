@@ -1,0 +1,131 @@
+﻿bước 1 .
+.container-fluid // chiều rộng full màn hình
+
+bước 2 .
+chiều rộng cố định 
+<div class=”container”>
+Viết gì thì viết
+</div>
+
+bước 3
+<ins>Đây là chữ gạch dưới</ins>
+<u>Đây là chữ gạch dưới</u>
+
+bước 4 Lớp căn chỉnh
+<p class="text-left">Left aligned text.</p>
+<p class="text-center">Center aligned text.</p>
+<p class="text-right">Right aligned text.</p>
+<p class="text-justify">Justified text.</p>
+<p class="text-nowrap">No wrap text.</p>
+
+bước 5:Lớp biến đổi
+<p class="text-lowercase">Lowercased text.</p>
+<p class="text-uppercase">Uppercased text.</p>
+<p class="text-capitalize">Capitalized text.</p>
+
+Bước 6 :Danh sách
+ 1- Kiểu ko sắp xếp(có dấu chấm đầu)
+<ul>
+<li>...</li>
+</ul>
+2-Kiểu sắp xếp
+<ol>
+<li>...</li>
+</ol>
+3-Không kiểu (ko có dấu chấm đầu)
+
+<ul class="list-unstyled">
+<li>...</li>
+</ul>
+3-Kiểu nằm trên 1 dòng (làm menu ngang)
+<ul class="list-inline">
+<li>...</li>
+</ul>
+
+
+Bước 7 : Table
+1-cơ bản
+<table class="table">
+...
+</table>
+2-kiểu hàng sọc
+<table class="table table-striped">
+...
+</table>
+3-kiểu viền
+<table class="table table-bordered">
+...
+</table>
+4-kiểu hover
+<table class="table table-hover">
+…
+</table>
+5-Kiểu trang trí tường dòng
+<!-- On rows -->
+<tr class="active">...</tr>
+<tr class="success">...</tr>
+<tr class="warning">...</tr>
+<tr class="danger">...</tr>
+<tr class="info">...</tr>
+<!-- On cells (`td` or `th`) -->
+<tr>
+<td class="active">...</td>
+<td class="success">...</td>
+<td class="warning">...</td>
+<td class="danger">...</td>
+<td class="info">...</td>
+</tr
+
+6- Kiểu Responsive Table
+<div class="table-responsive">…</div>
+
+Bước 8 Kích thước button
+
+Button trong Bootstrap có 4 kích thước:
+Để thay đổi kích thước button, các bạn ch
+Trong đó x là: lg, sm, xs
+Với kích thước mặc định thì không cần thêm class
+Ví dụ:
+<p>
+<button type="button" class="btn btn
+<button type="button" class="btn btn
+</p>
+<p>
+<button type="button" class="btn btn
+<button type="button" class="btn btn
+Cộng Đồng CNTT Pveser
+ủa bạn thì bạn thay thế btn-x bằ
+-red”>Giaotrinhcntt.Com</button>
+lớn (lg), mặc định, nhỏ (sm), cực nhỏ (xs)
+ỉ cần thêm class .btn-x
+
+
+Bước 9- Hình Ảnh
+kiểu Có 3 kiểu: hình vuông, hình tròn, kiểu thumb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
