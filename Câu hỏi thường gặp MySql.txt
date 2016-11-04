@@ -1,0 +1,5 @@
+﻿
+NHỮNG CÂU HỎI THƯỜNG GẶP
+
+1- RDBMS trong mysql là gì ?
+answer- Relational Database Management System

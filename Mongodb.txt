@@ -1,0 +1,67 @@
+﻿Câu 1 :NoSQL là gì ?
+Câu 2 :lịch sử phát triển
+Câu 3 :Cách thuật ngữ trong noSQL
+Câu 4 :so sách NOSQL với RDBMS
+Câu 5 :phân loại và ứng dụng NOSQL
+----------------------------------
+Câu 1 :
+Nosql hỗ trợ cho dữ liệu big data
+Những khái niệm của NOSQL
+- nosql có nghĩa là non-relational
+- nosql là not only sql
+-Không sử dụng mô hình quan hệ RDBMS
+-mô hình dữ liệu {"key" :"value"}
+-Hệ thống dữ liệu phân tán
+Nosql là .hệ cơ sở dữ liệu không ràng buộc ,phân tán(nhiều server khác nhau)
+mã nguồn mở , khả ngăng mở rộng theo chiều ngang,
+có thể chứa hàng petabytes ,độ chịu tải và chịu lỗi cao,
+yêu cầu về tài nguyên phần cứng thấp
+
+2 Lịch sử phát triển .
+Nosql storage đặc biệt thông dụng với Mạng Xã Hội(fb,twitter)
+
+3 Các Thuật ngữ Liên Quan .
+-Ràng buộc - Relational 
+-nó không giới hạng 
+Table ->colection
+Record->document
+Field ->value
+-Mở rộng theo chiều dọc (nâng cấp ram ,cpu,bộ nhớ )
+-Mở rộng theo chiều ngang .thay thế server lúc đầu thành server khác 
+
+4 so sánh NOSQL và SQL
+- Ngoài ra có công nghệ NewSQL mới 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

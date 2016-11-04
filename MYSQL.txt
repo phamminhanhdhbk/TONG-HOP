@@ -1,0 +1,52 @@
+﻿
+1 - SELECT TOP(SQL SERVER) .còn trong MYQSL là LIMIT
+cú pháp :
+SELECT *
+FROM Persons
+LIMIT 5;
+
+2 -ORDER BY
+SELECT column_name, column_name
+FROM table_name
+ORDER BY column_name ASC|DESC, column_name ASC|DESC;
+
++Trong đó
+ +ASC -(ascending) ,
++DESC (descending)
+
+3-SMART HACKER
+SELECT * FROM Users WHERE Name ="" or ""="" AND Pass ="" or ""=""
+
+4 IN OPERATOR
+nói cũng giống như dùng where nhưng in thì dùng multiple value
+syntax :
+SELECT column_name(s)
+FROM table_name
+WHERE column_name IN (value1,value2,...);
+
+5-SQL ALIASES
+
+sử dụng tên tạm thời
+SELECT column_name AS alias_name
+FROM table_name;
+
+ví dụ :
+SELECT CustomerName AS Customer, ContactName AS [Contact Person]
+FROM Customers;
+
+6- JOIN (quan hệ giữa nhiều bảng với nhau)
+syntax
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers
+ON Orders.CustomerID=Customers.CustomerID;
+
+
+
+
+
+
+
+
+
+
