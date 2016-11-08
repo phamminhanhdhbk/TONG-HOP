@@ -1,0 +1,102 @@
+﻿Bước 1 :
+down thư viện angularjs về : https://code.angularjs.org/
+hãy download bảng 1.3.9 cho ổn định
+muốn chương trình mình chạy angular chỗ nào thì khai báo ng-app="" chỗ đó
+
+Bước 2 :muốn khai báo tên cho ng-app ="Tên Ứng Dụng 1" thì chúng ta phải khai báo  
+var biengido = angular.module("Tên Ứng Dụng 1",[]);
+
+//mỗi giao diện có nhiều ứng dụng nên chúng ta phải khai báo nó
+
+Bài 3 :NG-CONTROLER
+- Trong mỗi app có nhiều controller
+chúng ta có thể khai báo controller theo syntax sau ; 
+ng-controller ="controller1"
+
+và bên app.js chúng ta phải khai báo như sau :
+
+var biengido = angular.module("Tên Ứng Dụng 1",[]);
+ biengido.controller("controller1", function($scope)
+{
+$scope.message = "Xin Chào mọi người";
+
+//có nghĩa là chúng ta truyền biến message qua view trong controller1
+
+});
+//trong đó scope là biến toàn cục lưu trữ dữ liệu trao đổi dữ liệu controller ,view ,model
+
+Bài 4 : $rootScope cấp bật cao nhất ng-app 
+khai báo trong controller này nhưng vẫn thực hiện được ở trong các controller khác
+
+Bài 5 :NG-MODEL
+chính là khai báo biến trong angular
+syntax : ng-model ="bien1"
+{{bien1}}
+
+
+// bài tập in phép toán ra màn hình
+
+Bài 6 :Directive
+tất cả những cái ng-app ,ng-model ,ng-controller .v.v.v được gọi là directive
+Vậy Directive là một đối tượng mà chúng ta có thể định nghĩa nó thông qua các thuộc tính cả các tag của html .
+Muốn tìm hiểu các directive thì vào link sau :
+https://docs.angularjs.org/api.
+Trong angularjs có những Directive có sẵn hoặc chúng ta có thể định nghĩa chúng tùy thuộc vào chức năng muốn làm.
+
+HƯỚNG DẪN TẠO DIRECTIVE:
+bước 1: khai báo directive ngoài view :
+ng-name_directive
+bước 2 :
+var app2 = angular.module('app2', []);
+
+app2.directive('ngCreatedirective', [function () {
+	return {
+		template: '<h1> Đây là cách Khai báo Directive </h1>',
+
+	};
+}]);
+
+
+// Node chú ý đặt tên trong app.js cho đúng .sau dấu gạch là phải viết hoa . ('ngCreatedirective', 
+
+Bài 7 :Directive templateUrl
+Thay vì return template ta sẽ return về templateUrl
+có nghĩa là đường dẫn template chúng ta muốn nó hiễn thị
+
+app2.directive('ngTemplateurl', [function () {
+	return {
+		
+		templateUrl :'app/templates/form_login.php'
+
+	};
+}]);
+
+Bài 8 :Directive Restrict
+E => element
+C =>class
+A=>attibute
+
+
+Bài 9 Directive Talking To Controller
+directive gọi đến một số hàm trong controller nó đang nằm 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
