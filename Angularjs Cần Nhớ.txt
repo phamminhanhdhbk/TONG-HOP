@@ -1,3 +1,5 @@
 ﻿1) Muốn lấy url của page hiên tại thì dùng $location
  $scope.myUrl = $location.absUrl();
+2)Muốn nhận data từ server thì dừng $http service
+
 2Muốn set timeout cho một giá trị nào đó thì dùng service $timeout
